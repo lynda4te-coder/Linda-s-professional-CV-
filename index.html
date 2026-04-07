@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linda D. Forteh | Education Specialist & Institutional Developer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #003057;
+            --gold: #b8860b;
+            --light-gold: #fcf4dd;
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--navy);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 48, 87, 0.8), rgba(0, 48, 87, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .gold-line {
+            width: 100px;
+            height: 4px;
+            background: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .section-title .underline {
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto;
+        }
+
+        /* Summary Box */
+        .summary-card {
+            background: var(--light-gold);
+            padding: 40px;
+            border-left: 5px solid var(--gold);
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+
+        /* Expertise Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .expertise-item {
+            padding: 30px;
+            background: #fff;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 8px;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .expertise-item i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        /* Experience Timeline */
+        .experience-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--navy);
+        }
+
+        .experience-item h3 {
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .experience-date {
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Education & Skills */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .publication-list {
+            list-style: none;
+        }
+
+        .publication-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: var(--gold);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .two-column { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">L.D. FORTEH</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#publications">Books</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="gold-line"></div>
+        <h1>LINDA D. FORTEH</h1>
+        <p>Education Specialist | Institutional Development Practitioner | Environmental Scientist | Published Author</p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </header>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>Summary of Qualifications</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="summary-card">
+            Education and institutional development practitioner with more than <strong>20 years of progressive experience</strong> in school governance, environmental science, and project management. Demonstrated expertise in designing educational frameworks that integrate national standards with international accreditation models. Committed to the World Bank Group's mission of reducing poverty through inclusive, people-centred development.
+            <br><br>
+            <strong>Bilingual:</strong> English (Native) / French (Intermediate)
+        </div>
+    </section>
+
+    <section id="expertise" style="background-color: #f9f9f9;">
+        <div class="section-title">
+            <h2>Core Areas of Expertise</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <i class="fas fa-school"></i>
+                <h3>Education Systems</h3>
+                <p>Curriculum design, accreditation models, and school governance aligned with MINEDUB standards.</p>
+            </div>
+            <div class="expertise-item">
+                <i class="fas fa-users-cog"></i>
+                <h3>Capacity Building</h3>
+                <p>Human resource administration, leadership mentoring, and multi-stakeholder engagement.</p>
+            </div>
+            <div class="expertise-item">
+                <i class="fas fa-robot"></i>
+                <h3>Digital Innovation</h3>
+                <p>AI literacy and practical application of digital transformation tools in education and business.</p>
+            </div>
+            <div class="expertise-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainability</h3>
+                <p>Environmental science monitoring, waste management research, and ecological reporting.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-title">
+            <h2>Professional Journey</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="experience-item">
+            <span class="experience-date">2021 – Present</span>
+            <h3>School Administrator & Classroom Teacher</h3>
+            <p><strong>Daystar Academy – Private Secular Bilingual Primary School</strong></p>
+            <ul>
+                <li>Leading academic and administrative operations for compliance with Ministerial Order (2025).</li>
+                <li>Integrating Cameroon Dual Education System with American PACE frameworks.</li>
+                <li>Directing HR functions, recruitment, and professional development.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <span class="experience-date">2025 – Present</span>
+            <h3>Mentor – AI Unlocked Program</h3>
+            <p><strong>Team21 Academy</strong></p>
+            <p>Providing structured mentorship in practical AI competencies for professionals across Sub-Saharan Africa.</p>
+        </div>
+
+        <div class="experience-item">
+            <span class="experience-date">2018 – 2020</span>
+            <h3>Mentor – Servant Leadership Program</h3>
+            <p><strong>Team21 Academy</strong></p>
+            <p>Mentored 40+ emerging leaders through a 21-week practitioner-focused development initiative.</p>
+        </div>
+
+        <div class="experience-item">
+            <span class="experience-date">2005 – Present</span>
+            <h3>Financial Administrator</h3>
+            <p><strong>Academy Campus Forum – Alumni South West</strong></p>
+            <p>Leading financial planning, governance, and accountability for the association.</p>
+        </div>
+    </section>
+
+    <section id="education" style="background-color: var(--light-gold);">
+        <div class="two-column">
+            <div>
+                <h2 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 20px; color: var(--navy);">Education</h2>
+                <div class="experience-item" style="border-left-color: var(--gold);">
+                    <h3>Executive Master in Project Management</h3>
+                    <p>ISMR, Cameroon | 2012</p>
+                </div>
+                <div class="experience-item" style="border-left-color: var(--gold);">
+                    <h3>BA – Leadership and Ministry</h3>
+                    <p>Accredited Theological Institution | 2016 – 2019</p>
+                </div>
+                <div class="experience-item" style="border-left-color: var(--gold);">
+                    <h3>BSc Environmental Science / Botany</h3>
+                    <p>University of Buea | 2000 – 2005</p>
+                </div>
+            </div>
+            <div id="publications">
+                <h2 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 20px; color: var(--navy);">Published Works</h2>
+                <ul class="publication-list">
+                    <li><i class="fas fa-book" style="color: var(--gold); margin-right: 10px;"></i> Undistracted Woman</li>
+                    <li><i class="fas fa-book" style="color: var(--gold); margin-right: 10px;"></i> Becoming Her before the Ring</li>
+                    <li><i class="fas fa-book" style="color: var(--gold); margin-right: 10px;"></i> Becoming Her after the Ring</li>
+                    <li><i class="fas fa-book" style="color: var(--gold); margin-right: 10px;"></i> The Undistracted Wife</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Connect With Me</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-method">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p><a href="tel:+237677273516" style="text-decoration:none; color:inherit;">+(237) 677 273 516</a></p>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>linda_dalza@yahoo.com</p>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Yaoundé, Cameroon</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Linda D. Forteh. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Education Specialist | Institutional Development | Environmental Scientist</p>
+    </footer>
+
+</body>
+</html>
